@@ -1,7 +1,7 @@
 require('dotenv').config();
-const express = require ('express');
+const express = require('express');
 const package = require('./package.json');
-//const routes = require ('./routes/index.js')
+const routes = require('./routes');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
@@ -13,7 +13,7 @@ const app = express();
 
 (async () => {
     await mongoose.connect(url, { useNewUrlParser: true });
- 
+
     // express
     app.use(cors());
     app.use(express.json());
@@ -21,7 +21,7 @@ const app = express();
     app.use(morgan('dev'));
 
     // routes 
-    // app.use(routes);
+    app.use(routes);
 
     // app.use(function (req, res, next) {
     //     res.status(404).json({ error: 'Not found.' });

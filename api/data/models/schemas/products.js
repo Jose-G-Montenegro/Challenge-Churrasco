@@ -37,3 +37,5 @@ const products = new Schema({
     }
 
 })
+
+module.exports = products;

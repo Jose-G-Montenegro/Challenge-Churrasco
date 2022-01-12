@@ -29,3 +29,5 @@ const users = new Schema({
         type: Date
     }
 });
+
+module.exports = users;
